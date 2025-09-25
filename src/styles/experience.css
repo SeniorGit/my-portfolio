@@ -1,0 +1,156 @@
+.expe{
+    background-color: #16161a;
+    width: 100%;
+    padding: 100px clamp(15px, 5vw, 40px) 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    min-height: 100vh;
+}
+
+.container-experience{
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1280px;
+    align-items: center;
+}
+
+.ExperienceText {
+    color: #fffffe;
+    flex: 1;
+    width: 100%;
+}
+
+.ExperienceText h1{
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.ExperienceText p{
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #94a1b2;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+.ExperienceText li{
+    font-weight: 600;
+    margin-bottom: 12px;
+    line-height: 1.5;
+    color: #94a1b2;
+}
+
+.ExperienceText span{
+    color: #FFFFFe;
+    font-size: 1.2rem;
+}
+
+.achievements {
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+.achievements-title{
+    font-weight: 600;
+
+}
+.mobile{
+    width: 100px;
+}
+/* Image Container Styles */
+.ExperienceImg {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.mockup {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    
+    background-color: #16161a;
+}
+
+/* Tablet Layout: Side by side */
+@media (min-width: 768px) {
+    .container-experience {
+        flex-direction: row;
+        align-items: center;
+        gap: 50px;
+    }
+    
+    .ExperienceText {
+        padding-right: 30px;
+    }
+    
+    .mockup {
+        max-width: 500px;
+        background-color: #16161a;
+    }
+}
+
+/* Desktop Layout */
+@media (min-width: 1024px) {
+    .container-experience {
+        gap: 80px;
+    }
+    
+    .mockup {
+        max-width: 800px;
+        background-color: #16161a;
+    }
+}
+
+/* Large Desktop */
+@media (min-width: 1440px) {
+    .container-experience {
+        max-width: 1400px;
+    }
+    
+    .mockup {
+        max-width: 900px;
+        background-color: #16161a;
+    }
+}
+
+/* Mobile Optimization */
+@media (max-width: 767px) {
+    .expe {
+        padding: 80px 20px 40px;
+    }
+    
+    .container-experience {
+        gap: 40px;
+    }
+    
+    .mockup {
+        max-width: 100%;
+        border-radius: 12px;
+        background-color: #16161a;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .expe {
+        padding: 60px 15px 30px;
+    }
+    
+    .container-experience {
+        gap: 30px;
+    }
+    
+    .mockup {
+        border-radius: 8px;
+        background-color: #16161a;
+    }
+}
