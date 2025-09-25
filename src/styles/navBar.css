@@ -1,6 +1,6 @@
 .navbar {
   background: #242629;
-  width: 100%;  
+  width: 100vw;  
   padding: 15px 0px;
   position: fixed;
   z-index: 1000;
@@ -17,10 +17,16 @@
   justify-content: flex-end;
   font-weight:600;
   font-size: clamp(1rem, 2.5vw, 1.2rem);
-  max-width: 1280px; 
   padding: 0 20px;
   margin: 0 auto; 
-  flex-wrap: wrap;
+  flex-wrap: nowrap; 
+  overflow-x: auto; 
+  -webkit-overflow-scrolling: touch; 
+  scrollbar-width: none;
+}
+
+.container-nav::-webkit-scrollbar {
+  display: none;
 }
 
 .container-nav a{
@@ -36,4 +42,27 @@
   transform: scale(1.05);
 }
 
+@media (max-width: 768px) {
+  .container-nav {
+    gap: 10px;
+    justify-content: center; 
+    min-height: 40px;
+  }
+  
+  .container-nav a {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+}
 
+@media (max-width: 480px) {
+  .container-nav {
+    gap: 8px;
+     min-height: 40px;
+  }
+  
+  .container-nav a {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+  }
+}

@@ -13,9 +13,9 @@ export default function Project(){
                     <h1>Project</h1>
                     <span className="project-subtitle">A showcase of my recent work and accomplishments</span>
                 </div>
-                <div className="project-card">
+                
                     <CardSwapper/>
-                </div>
+                
                 <div className="project-seemore">
                     <Link to={"/project"}>
                         <button className="see-more-btn" >

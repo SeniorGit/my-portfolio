@@ -1,5 +1,5 @@
 .project{
-    width: 100%;
+    width: 100vw;
     padding: 100px clamp(15px, 5vw, 40px) 40px;
     display: flex;
     align-items: center;
@@ -13,7 +13,6 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
-    max-width: 1280px;
     margin: 0 auto;
     width: 100%;
 }
