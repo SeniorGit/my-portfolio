@@ -1,19 +1,20 @@
 import "../styles/project.css"
 import "../App.css"
 import { Link } from "react-router-dom"
-// import { CarouselSize } from "@/components/projectSwap"
+import { CardSwapper } from "@/components/projectCard"
+
 
 
 export default function Project(){
     return(
-        <div className="project">
-            <div id="projects" className="container container-project">
+        <div className="project" id="projects">
+            <div  className="container container-project">
                 <div className="project-header">
                     <h1>Project</h1>
                     <span className="project-subtitle">A showcase of my recent work and accomplishments</span>
                 </div>
                 <div className="project-card">
-                    {/* <CarouselSize/> */}
+                    <CardSwapper/>
                 </div>
                 <div className="project-seemore">
                     <Link to={"/project"}>

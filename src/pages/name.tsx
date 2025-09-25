@@ -3,7 +3,7 @@ import "../App.css"
 import { FaGithub, FaLinkedin } from "react-icons/fa"
 export function Name(){
     return(
-        <div className="name">
+        <div className="name" id="myProfile">
             <div className="container container-name">
                 <div className="imgProfile"></div>
                 <div className="text-content">

@@ -1,11 +1,12 @@
 import type React from "react";
 import "../styles/navBar.css";
 import "../App.css"
+
 const LinkContent = [
+    { name: 'Home', sectionId:'myProfile'},
     { name: 'About Me', sectionId: 'about' },
     { name: 'Experience', sectionId: 'experience' },
     { name: 'Project', sectionId: 'projects' },
-    
 ];
 
 export function Navbar(){

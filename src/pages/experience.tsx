@@ -2,8 +2,8 @@ import "../styles/experience.css"
 import "../App.css"
 export function Experience(){
     return(
-        <div className="expe">
-            <div id="experience" className="container container-experience">
+        <div className="expe" id="experience">
+            <div  className="container container-experience">
                 <div className="ExperienceText">
                    <h1>Experience</h1>
                     <p>I recently completed an internship at <span>CoE Humic</span> to redesign and rebuild the consultation website, <span>Consulife</span>.</p>

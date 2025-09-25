@@ -10,8 +10,8 @@ import {
 import "../App.css"
 export function Aboutme(){
     return(
-        <div className="aboutme">
-            <div  id="about" className="container container-about">
+        <div className="aboutme" id="about">
+            <div   className="container container-about">
                 <div className="text">
                     <h1>About Me</h1>
                     <p>
