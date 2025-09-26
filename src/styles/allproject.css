@@ -1,0 +1,83 @@
+.allProject {
+    width: 100vw;   
+    padding: 100px clamp(15px, 5vw, 40px) 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-sizing: border-box;
+    min-height: 100vh;
+    background-color: #242629;
+    margin: 0;
+}
+
+.allProject > div:first-child {
+    margin-bottom: 40px; 
+    width: 100%;
+    display: flex;
+    justify-content: flex-start; 
+}
+
+
+.allProject > div:last-child {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.container-allProject{
+    background-color: #16161a;
+    padding: 0px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.container-allProject:hover{
+    transform: translateY(-5px) scale(1.02); /* Better hover effect */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border-color: rgba(127, 90, 240, 0.3);
+}
+
+.img-container{
+    border-radius: 15px 15px 0 0;
+    overflow: hidden;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.container-allProject:hover .img-container img {
+    transform: scale(1.05);
+}
+
+.card-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.back-btn {
+    background-color: #7f5af0;
+    font-weight: 600;
+    color: #fffffe;
+    transition: all 0.3s ease;
+    padding: 10px 24px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.back-btn:hover {
+    transform: translateY(-2px) scale(1.05); /* Better than just scale */
+    background-color: #6c47d4;
+    box-shadow: 0 5px 15px rgba(127, 90, 240, 0.3);
+}
