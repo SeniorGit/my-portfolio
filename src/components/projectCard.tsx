@@ -9,17 +9,19 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 import "../App.css";
-
+import Cosulife from "../assets/Consulife.png";
+import MemoryCard from "../assets/MemoryCard.png";
+import RockPaperScissor from "../assets/RockPaperScissor.png";
 
 const CardIsian = [
-    {id:1, ImgScr: 'src/assets/Consulife.png', Title: 'Consulife', SubTitle: 'Psychology Consultation', 
+    {id:1, ImgScr: Cosulife, Title: 'Consulife', SubTitle: 'Psychology Consultation', 
         Preview: 'https://consulife.humicprototyping.com/', Source: '',
         Description: 'A web-based application designed for online consultations, where users can schedule chats or video calls with psychologists, and an AI detector is available to analyze the patients’ psychological condition.'
     },
-    {id:2, ImgScr: 'src/assets/MemoryCard.png', Title: 'Memory Card', SubTitle: 'Game', 
+    {id:2, ImgScr: MemoryCard, Title: 'Memory Card', SubTitle: 'Game', 
         Description: 'The Memory Card web-based game is built with Vite and utilizes the Dragon Ball API to showcase iconic characters. The game is designed to be simple yet interactive, helping players train their memory while delivering an exciting experience for Dragon Ball fans.',
         Source:'https://github.com/SeniorGit/MemoryCard', Preview:'https://memory-card-ten-ruddy.vercel.app/'},
-    {id:3, ImgScr: 'src/assets/RockPaperScissor.png', Title: 'Rock Paper Scissor', SubTitle: 'Game', 
+    {id:3, ImgScr: RockPaperScissor, Title: 'Rock Paper Scissor', SubTitle: 'Game', 
         Description: 'Rock Paper Scissors game was developed using HTML, CSS, and JavaScript without any additional libraries or frameworks, with all game logic implemented in pure JavaScript. The game provides a simple interaction between the player and the computer through the choices of Rock, Paper, or Scissors, and displays the outcome—win, lose, or draw', 
         Source:'https://github.com/SeniorGit/RockPaperScissor', Preview:'https://rock-paper-scissor-chi-bice.vercel.app/'},
 ]

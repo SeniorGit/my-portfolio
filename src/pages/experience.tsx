@@ -1,5 +1,6 @@
 import "../styles/experience.css"
 import "../App.css"
+import Mockup from "../assets/Mockup.png";
 export function Experience(){
     return(
         <div className="expe" id="experience">
@@ -17,7 +18,7 @@ export function Experience(){
                     </ul>
                 </div>
                 <div className="ExperienceImg">
-                    <img src="src/assets/Mockup.png" className="mockup" alt="mockupDeskstop" />
+                    <img src={Mockup} className="mockup" alt="mockupDeskstop" />
                 </div>
             </div>
         </div>
