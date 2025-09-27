@@ -1,6 +1,6 @@
 .expe{
     background-color: #16161a;
-    width: 100vw;
+    width: 100%;
     padding: 100px clamp(15px, 5vw, 40px) 60px;
     display: flex;
     align-items: center;

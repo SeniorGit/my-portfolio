@@ -1,5 +1,5 @@
 .project{
-    width: 100vw;
+    width: 100%;
     padding: 100px clamp(15px, 5vw, 40px) 40px;
     display: flex;
     align-items: center;

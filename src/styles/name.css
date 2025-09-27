@@ -1,6 +1,6 @@
 .name{
     background: radial-gradient(circle at center, #DDDDDD -900%, #16161a 70%);
-    width: 100vw;
+    width: 100%;
     padding: 80px 20px 60px;
     min-height: 100vh;
     display: flex;
