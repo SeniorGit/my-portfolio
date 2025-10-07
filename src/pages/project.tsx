@@ -214,7 +214,7 @@ export default function Project() {
                     </span>
                 </div>
 
-                {/* Project Cards Carousel */}
+                {/* Project Cards Swapper */}
                 <div className="project-showcase">
                     <CardSwapper />
                 </div>

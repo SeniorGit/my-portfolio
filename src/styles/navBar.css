@@ -84,7 +84,7 @@
     align-items: center;
 }
 
-/* Nav Items dengan Advanced Hover Effects */
+/* Nav Items */
 .navMenu {
     position: relative;
     text-decoration: none;
@@ -130,7 +130,7 @@
     transform: translateY(-1px);
 }
 
-/* Active State dengan Gradient Effect */
+/* Active State  */
 .navMenu.active {
     color: var(--text-primary);
     background: linear-gradient(135deg, 
@@ -347,7 +347,7 @@
     }
 }
 
-/* Smooth Transitions untuk seluruh elemen */
+/* Smooth Transitions */
 * {
     transition: color 0.3s ease, background-color 0.3s ease;
 }

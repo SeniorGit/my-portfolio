@@ -7,21 +7,21 @@
   box-sizing: border-box;
 }
 
-/* Extra Extra Small Mobile (Old Phones) */
+/* Extra Extra Small Mobile  */
 @media (max-width: 320px) {
   .container {
     padding: 0 8px;
   }
 }
 
-/* Very Small Mobile (Small Phones) */
+/* Very Small Mobile  */
 @media (min-width: 321px) and (max-width: 400px) {
   .container {
     padding: 0 max(10px, 3vw);
   }
 }
 
-/* Small Mobile (Most Phones) */
+/* Small Mobile  */
 @media (min-width: 401px) and (max-width: 480px) {
   .container {
     padding: 0 12px;

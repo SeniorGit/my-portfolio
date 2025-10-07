@@ -1,8 +1,7 @@
-// src/components/Profile.tsx
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { FaGithub, FaLinkedin, FaDownload, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import "../styles/name.css";
 
 // Register ScrollTrigger plugin
@@ -14,7 +13,6 @@ export function Name() {
     const nameRef = useRef<HTMLHeadingElement>(null);
     const roleRef = useRef<HTMLParagraphElement>(null);
     const descriptionRef = useRef<HTMLParagraphElement>(null);
-    const buttonsRef = useRef<HTMLDivElement>(null);
     const socialRef = useRef<HTMLDivElement>(null);
     
     useEffect(() => {
@@ -211,16 +209,6 @@ export function Name() {
         return () => ctx.revert();
     }, []);
 
-    const handleDownloadCV = () => {
-        // Add your CV download logic here
-        console.log("Download CV clicked");
-    };
-
-    const handleHireMe = () => {
-        // Add your hire me logic here
-        console.log("Hire Me clicked");
-    };
-
     return (
         <section className="profile-section" id="myProfile" ref={sectionRef}>
             {/* Animated Background Elements */}
@@ -262,24 +250,6 @@ export function Name() {
                         <span className="highlight"> backend</span> development. 
                         Passionate about creating innovative digital solutions.
                     </p>
-
-                    {/* CTA Buttons */}
-                    <div className="cta-buttons" ref={buttonsRef}>
-                        <button 
-                            className="cta-button primary"
-                            onClick={handleHireMe}
-                        >
-                            <FaEnvelope className="button-icon" />
-                            Hire Me
-                        </button>
-                        <button 
-                            className="cta-button secondary"
-                            onClick={handleDownloadCV}
-                        >
-                            <FaDownload className="button-icon" />
-                            Download CV
-                        </button>
-                    </div>
 
                     {/* Social Links */}
                     <div className="social-links" ref={socialRef}>
