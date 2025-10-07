@@ -20,31 +20,18 @@ export function Experience() {
             id: 1,
             company: "CoE Humic - Telkom University",
             role: "Frontend Developer Intern",
-            period: "2024",
+            period: "Sep 2024 - Jan 2025",
             description: "Redesigned and rebuilt the consultation website, Consulife, focusing on modern UI/UX implementation.",
             achievements: [
                 "Transformed UI designs into responsive web pages",
                 "Ensured cross-browser compatibility",
                 "Collaborated with design team to implement pixel-perfect layouts",
-                "Optimized website performance and loading times"
-            ],
-            tech: ["React", "TypeScript", "CSS3", "Figma"]
-        },
-        {
-            id: 2,
-            company: "Work Ready Program",
-            role: "Web Developer",
-            period: "2023",
-            description: "Developed Consulife website as part of the Work Ready Program initiative.",
-            achievements: [
                 "Implemented responsive design principles",
                 "Integrated RESTful APIs for dynamic content",
                 "Conducted user testing and feedback implementation",
-                "Maintained code quality and documentation"
             ],
-            tech: ["JavaScript", "HTML5", "CSS3", "Git"]
+            tech: ["React", "TypeScript", "CSS3", "Next.js", "Github"]
         },
-        
     ];
 
     useEffect(() => {
