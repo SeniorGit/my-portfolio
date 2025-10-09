@@ -1,15 +1,20 @@
 {
-  "name": "Alfito Nur Fadhila - Portfolio",
+  "name": "Alfito Nur Fadhila - Fullstack Developer",
   "short_name": "Alfito Portfolio",
-  "description": "Fullstack Developer Portfolio",
+  "description": "Portfolio of Alfito Nur Fadhila - Fullstack Developer",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#16161a",
-  "theme_color": "#7f5af0",
+  "theme_color": "#16161a",
   "icons": [
     {
       "src": "/icons.png",
       "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons.png", 
+      "sizes": "512x512",
       "type": "image/png"
     }
   ]
