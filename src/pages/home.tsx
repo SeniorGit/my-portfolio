@@ -3,7 +3,7 @@ import { Navbar } from '../components/navBar'
 import { Name } from './name'
 import { Aboutme } from './aboutMe'
 import { Experience } from './experience'
-import Project from './project'
+import { ProjectList } from './projectlist'
 
 
 export default function Home() {
@@ -13,7 +13,7 @@ export default function Home() {
       <Name />
       <Aboutme />
       <Experience />
-      <Project />
+      <ProjectList/>
     </>
   )
 }

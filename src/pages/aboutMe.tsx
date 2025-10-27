@@ -8,7 +8,6 @@ import {
     SiNextdotjs,
     SiPostgresql,
     SiExpress,
-    SiAngular,
     SiTypescript
 } from "react-icons/si";
 import "../styles/aboutme.css";
@@ -207,7 +206,7 @@ export function Aboutme() {
                     
                     <div className="about-text" ref={textRef}>
                         <p className="about-text-paragraph">
-                            I am a fresh graduate from Informatics Engineering at Telkom University, with a strong interest in web development, particularly using <span className="tech-highlight">Angular</span> and <span className="tech-highlight">Next.js</span>. I have experience in developing the Consulife website during the Work Ready Program and also interned at CoE Humic Telkom University.
+                            I am a fresh graduate from Informatics Engineering at Telkom University, with a strong interest in fullstack web development, particularly using <span className="tech-highlight">Next.js</span> and <span className="tech-highlight">Node.js</span>. I have experience in developing the Consulife website during the Work Ready Program and also interned at CoE Humic Telkom University.
                         </p>
                         <p className="about-text-paragraph">
                             In these projects, I was responsible for implementing UI designs into <span className="tech-highlight">responsive, production-ready websites</span>. Additionally, I have developed this personal portfolio website using <span className="tech-highlight">React with TypeScript</span>.
@@ -260,13 +259,7 @@ export function Aboutme() {
                                 </div>
                                 <span className="skill-name">React</span>
                             </div>
-                            <div className="skill-item">
-                                <div className="skill-icon">
-                                    <SiAngular />
-                                    <div className="skill-glow"></div>
-                                </div>
-                                <span className="skill-name">Angular</span>
-                            </div>
+                            
                             <div className="skill-item">
                                 <div className="skill-icon">
                                     <SiNextdotjs />

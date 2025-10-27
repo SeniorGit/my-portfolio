@@ -264,7 +264,7 @@ export function Name() {
                             <span className="social-tooltip">GitHub</span>
                         </a>
                         <a 
-                            href="https://www.linkedin.com/in/alfitofadhil/"
+                            href="https://www.linkedin.com/in/alfitofadhil-dev/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="social-link"

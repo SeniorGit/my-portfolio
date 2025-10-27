@@ -12,6 +12,7 @@ export const CardIsian = [
         Preview: 'https://consulife.humicprototyping.com/', Source: '',
         Description: 'A web-based application designed for online consultations, where users can schedule chats or video calls with psychologists, and an AI detector is available to analyze the patients’ psychological condition.'
     },
+    // to do list
     {id:2, ImgScr: MemoryCard, Title: 'Memory Card', SubTitle: 'Game', 
         Description: 'The Memory Card web-based game is built with Vite and utilizes the Dragon Ball API to showcase iconic characters. The game is designed to be simple yet interactive, helping players train their memory while delivering an exciting experience for Dragon Ball fans.',
         Source:'https://github.com/SeniorGit/MemoryCard', Preview:'https://memory-card-ten-ruddy.vercel.app/'},
@@ -30,4 +31,7 @@ export const CardIsian = [
     {id:7, ImgScr: FormCv, Title: 'CV-Generator', SubTitle: 'Utility', 
         Description: 'CV Generator is a web application built with React and Vite that helps users create professional resumes quickly and easily. It allows customization of personal details, skills, and experiences to generate a clean, structured CV.', 
         Source:'https://github.com/SeniorGit/FormCV', Preview:'https://form-cv-five.vercel.app/'},
+    {id:8, ImgScr: MemoryCard, Title: 'Memory Card', SubTitle: 'Game', 
+        Description: 'The Memory Card web-based game is built with Vite and utilizes the Dragon Ball API to showcase iconic characters. The game is designed to be simple yet interactive, helping players train their memory while delivering an exciting experience for Dragon Ball fans.',
+        Source:'https://github.com/SeniorGit/MemoryCard', Preview:'https://memory-card-ten-ruddy.vercel.app/'},
 ]
