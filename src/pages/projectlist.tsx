@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import MockUpTodolist from "../assets/ToDoListMockUp.png"
-import MockUpKopiJourney from "../assets/MockUpKopiJourney.png"
+// import MockUpKopiJourney from "../assets/MockUpKopiJourney.png"
 import "../styles/projectlist.css";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -36,23 +36,23 @@ export function ProjectList() {
             status: "Live",
             img: MockUpTodolist
         },
-        {
-            id: 2,
-            name: "Kopi Journey",
-            description: "A transparent coffee supply chain platform that connects local farmers with coffee enthusiasts through traceable sourcing and roast-to-order system.",
-            features: [
-                "End-to-end supply chain tracking from farm to cup",
-                "Roast-to-order scheduling system",
-                "Farmer empowerment through direct market access",
-                "Quality control and batch verification",
-                "Personalized coffee blend recommendations",
-                "Real-time order status updates"
-            ],
-            tech: ["React", "TypeScript", "Next.js", "Node.js", "PostgreSQL"],
-            liveUrl: "https://kopi-journey.vercel.app",
-            status: "In Development",
-            img: MockUpKopiJourney
-        },
+        // {
+        //     id: 2,
+        //     name: "Kopi Journey",
+        //     description: "A transparent coffee supply chain platform that connects local farmers with coffee enthusiasts through traceable sourcing and roast-to-order system.",
+        //     features: [
+        //         "End-to-end supply chain tracking from farm to cup",
+        //         "Roast-to-order scheduling system",
+        //         "Farmer empowerment through direct market access",
+        //         "Quality control and batch verification",
+        //         "Personalized coffee blend recommendations",
+        //         "Real-time order status updates"
+        //     ],
+        //     tech: ["React", "TypeScript", "Next.js", "Node.js", "PostgreSQL"],
+        //     liveUrl: "https://kopi-journey.vercel.app",
+        //     status: "In Development",
+        //     img: MockUpKopiJourney
+        // },
     ];
 
     useEffect(() => {
