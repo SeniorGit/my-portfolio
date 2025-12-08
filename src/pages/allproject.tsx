@@ -11,31 +11,21 @@ export default function AllProject(){
     const projectsRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate-in');
-                        
-                        // Animate project cards sequentially
-                        if (entry.target.classList.contains('all-projects-grid')) {
-                            const cards = entry.target.querySelectorAll('.project-item-card');
-                            cards.forEach((card, index) => {
-                                setTimeout(() => {
-                                    card.classList.add('animate-in');
-                                }, index * 150);
-                            });
-                        }
-                    }
-                });
-            },
-            { threshold: 0.2 }
-        );
+        const sectionEl = sectionRef.current;
+        const gridEl = projectsRef.current;
 
-        if (sectionRef.current) observer.observe(sectionRef.current);
-        if (projectsRef.current) observer.observe(projectsRef.current);
-
-        return () => observer.disconnect();
+        if (sectionEl) {
+            sectionEl.classList.add("animate-in");
+        }
+        if (gridEl) {
+            gridEl.classList.add("animate-in");
+            const cards = gridEl.querySelectorAll(".project-item-card");
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.classList.add("animate-in");
+                }, index * 150);
+            });
+        }
     }, []);
 
     return(

@@ -1,7 +1,11 @@
 import type React from "react";
 import { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { FiX } from "react-icons/fi";
 import "../styles/navBar.css";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const LinkContent = [
     { name: 'Home', sectionId: 'myProfile' },
@@ -259,27 +263,34 @@ export function Navbar() {
             </nav>
 
             {/* Mobile Navigation Menu dengan Backdrop */}
-            {isMobileMenuOpen && (
-                <div 
-                    className="mobile-nav-backdrop" 
-                    onClick={handleBackdropClick}
-                >
-                    <div ref={mobileMenuRef} className="mobile-nav">
-                        <div className="mobile-nav-content">
-                            {LinkContent.map(link => (
-                                <a
-                                    key={link.name}
-                                    href={`#${link.sectionId}`}
-                                    onClick={(e) => handleSmoothScroll(e, link.sectionId)}
-                                    className={`mobile-navMenu ${activeSection === link.sectionId ? 'active' : ''}`}
-                                >
-                                    <span className="mobile-nav-text">{link.name}</span>
-                                </a>
-                            ))}
-                        </div>
+            <div 
+                className={`mobile-nav-backdrop ${isMobileMenuOpen ? 'open' : ''}`} 
+                onClick={handleBackdropClick}
+                aria-hidden={!isMobileMenuOpen}
+            >
+                <div ref={mobileMenuRef} className="mobile-nav">
+                    <button
+                        type="button"
+                        className="mobile-close-btn"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        aria-label="Close navigation menu"
+                    >
+                        <FiX />
+                    </button>
+                    <div className="mobile-nav-content">
+                        {LinkContent.map(link => (
+                            <a
+                                key={link.name}
+                                href={`#${link.sectionId}`}
+                                onClick={(e) => handleSmoothScroll(e, link.sectionId)}
+                                className={`mobile-navMenu ${activeSection === link.sectionId ? 'active' : ''}`}
+                            >
+                                <span className="mobile-nav-text">{link.name}</span>
+                            </a>
+                        ))}
                     </div>
                 </div>
-            )}
+            </div>
         </>
     );
 }

@@ -2,8 +2,21 @@
 import './App.css'
 import Home from './pages/home'
 import AllProject from './pages/allproject'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
+function ScrollToTop() {
+  const location = useLocation()
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+  }, [location.pathname])
+
+  return null
+}
+
 function App() {
 
   useEffect(() => {
@@ -38,14 +51,13 @@ function App() {
   }, []);
 
   return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<Home/>}/>
-          <Route path='/project' element={<AllProject/>}/>
-        </Routes>
-      </BrowserRouter>
-    </>
+    <BrowserRouter>
+      <ScrollToTop />
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/project' element={<AllProject/>}/>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
