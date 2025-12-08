@@ -258,7 +258,7 @@
     transform: translateY(-2px);
 }
 /* Mockup Card Specific Styles */
-.project-mockup-contentt{
+.project-mockup-card{
     display: flex;
     flex-direction: column;
     align-items: center;

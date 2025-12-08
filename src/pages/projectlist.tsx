@@ -56,26 +56,35 @@ export function ProjectList() {
     ];
 
     useEffect(() => {
+        const cleanupFns: Array<() => void> = [];
+
         // Button hover animation
         if (buttonRef.current) {
-            buttonRef.current.addEventListener('mouseenter', () => {
-                gsap.to(buttonRef.current, {
+            const buttonEl = buttonRef.current;
+            const handleButtonEnter = () => {
+                gsap.to(buttonEl, {
                     y: -5,
                     scale: 1.05,
                     boxShadow: "0 15px 40px rgba(101, 126, 234, 0.4)",
                     duration: 0.3,
                     ease: "power2.out"
                 });
-            });
-
-            buttonRef.current.addEventListener('mouseleave', () => {
-                gsap.to(buttonRef.current, {
+            };
+            const handleButtonLeave = () => {
+                gsap.to(buttonEl, {
                     y: 0,
                     scale: 1,
                     boxShadow: "0 8px 25px rgba(101, 126, 234, 0.3)",
                     duration: 0.3,
                     ease: "power2.out"
                 });
+            };
+
+            buttonEl.addEventListener('mouseenter', handleButtonEnter);
+            buttonEl.addEventListener('mouseleave', handleButtonLeave);
+            cleanupFns.push(() => {
+                buttonEl.removeEventListener('mouseenter', handleButtonEnter);
+                buttonEl.removeEventListener('mouseleave', handleButtonLeave);
             });
         }
 
@@ -171,9 +180,9 @@ export function ProjectList() {
             );
 
             // Card hover animations
-            const projectCards = document.querySelectorAll('.project-info-card, .project-mockup-card');
+            const projectCards = document.querySelectorAll<HTMLElement>('.project-info-card, .project-mockup-card');
             projectCards.forEach((card) => {
-                card.addEventListener('mouseenter', () => {
+                const handleCardEnter = () => {
                     gsap.to(card, {
                         y: -10,
                         scale: 1.02,
@@ -181,7 +190,7 @@ export function ProjectList() {
                         duration: 0.3,
                         ease: "power2.out"
                     });
-                    
+
                     // Glow effect
                     const glowElement = card.querySelector('.project-card-glow');
                     if (glowElement) {
@@ -191,9 +200,9 @@ export function ProjectList() {
                             ease: "power2.out"
                         });
                     }
-                });
+                };
 
-                card.addEventListener('mouseleave', () => {
+                const handleCardLeave = () => {
                     gsap.to(card, {
                         y: 0,
                         scale: 1,
@@ -201,7 +210,7 @@ export function ProjectList() {
                         duration: 0.3,
                         ease: "power2.out"
                     });
-                    
+
                     const glowElement = card.querySelector('.project-card-glow');
                     if (glowElement) {
                         gsap.to(glowElement, {
@@ -210,6 +219,13 @@ export function ProjectList() {
                             ease: "power2.out"
                         });
                     }
+                };
+
+                card.addEventListener('mouseenter', handleCardEnter);
+                card.addEventListener('mouseleave', handleCardLeave);
+                cleanupFns.push(() => {
+                    card.removeEventListener('mouseenter', handleCardEnter);
+                    card.removeEventListener('mouseleave', handleCardLeave);
                 });
             });
 
@@ -247,28 +263,38 @@ export function ProjectList() {
             );
 
             // Button hover animations
-            const buttons = document.querySelectorAll('.project-demo-btn');
+            const buttons = document.querySelectorAll<HTMLElement>('.project-demo-btn');
             buttons.forEach((button) => {
-                button.addEventListener('mouseenter', () => {
+                const handleButtonEnter = () => {
                     gsap.to(button, {
                         scale: 1.05,
                         duration: 0.2,
                         ease: "power2.out"
                     });
-                });
+                };
 
-                button.addEventListener('mouseleave', () => {
+                const handleButtonLeave = () => {
                     gsap.to(button, {
                         scale: 1,
                         duration: 0.2,
                         ease: "power2.out"
                     });
+                };
+
+                button.addEventListener('mouseenter', handleButtonEnter);
+                button.addEventListener('mouseleave', handleButtonLeave);
+                cleanupFns.push(() => {
+                    button.removeEventListener('mouseenter', handleButtonEnter);
+                    button.removeEventListener('mouseleave', handleButtonLeave);
                 });
             });
 
         }, sectionRef);
 
-        return () => ctx.revert();
+        return () => {
+            ctx.revert();
+            cleanupFns.forEach((cleanup) => cleanup());
+        };
     }, []);
 
     // Function untuk menambahkan ref ke array
@@ -356,7 +382,7 @@ export function ProjectList() {
 
                                     {/* Card Mockup - terpisah dari card informasi */}
                                     
-                                    <div className="project-mockup-contentt">
+                                    <div className="project-mockup-card">
                                         <div className="project-mockup-container">
                                             <img 
                                                 ref={addToRefs}
