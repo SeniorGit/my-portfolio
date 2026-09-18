@@ -4,8 +4,8 @@
   "description": "Portfolio of Alfito Nur Fadhila - Fullstack Developer",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#16161a",
-  "theme_color": "#16161a",
+  "background_color": "#FAFAF8",
+  "theme_color": "#FAFAF8",
   "icons": [
     {
       "src": "/icons192.png",
