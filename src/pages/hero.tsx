@@ -10,7 +10,19 @@ export function Hero() {
     <section id="hero" className="py-20 md:py-28">
       <Container>
         <div className="grid items-center gap-10 md:grid-cols-[1fr_auto] md:gap-16">
-          <RevealOnScroll>
+          <RevealOnScroll delayMs={100} className="order-1 flex justify-center md:order-2">
+            <img
+              src={ProfilePhoto}
+              alt="Alfito Nur Fadhila"
+              width={280}
+              height={280}
+              loading="eager"
+              fetchPriority="high"
+              className="size-[220px] rounded-full border border-border object-cover md:size-[280px]"
+            />
+          </RevealOnScroll>
+
+          <RevealOnScroll className="order-2 md:order-1">
             <div>
               <p className="font-mono text-xs uppercase tracking-wide text-accent">
                 Fullstack Developer
@@ -40,18 +52,6 @@ export function Hero() {
                 />
               </div>
             </div>
-          </RevealOnScroll>
-
-          <RevealOnScroll delayMs={100}>
-            <img
-              src={ProfilePhoto}
-              alt="Alfito Nur Fadhila"
-              width={280}
-              height={280}
-              loading="eager"
-              fetchPriority="high"
-              className="size-[220px] rounded-full border border-border object-cover md:size-[280px]"
-            />
           </RevealOnScroll>
         </div>
       </Container>
