@@ -1,27 +1,22 @@
+import { lazy, Suspense, useState } from "react"
 import { Navbar } from "@/components/navBar"
 import { Hero } from "./hero"
-import { About } from "./about"
-import { Skills } from "./skills"
-import { Experience } from "./experience"
-import { FeaturedProjects } from "./featured-projects"
-import { PracticeProjects } from "./practice-projects"
-import { Contact } from "./contact"
 import { Footer } from "@/components/Footer"
 
+const BelowFold = lazy(() => import("./below-fold"))
+
 export default function Home() {
+  const [ready, setReady] = useState(false)
   return (
-    <>
-      <Navbar />
-      <main>
+    <div className="page-in">
+      <Navbar observe={ready} />
+      <main id="main">
         <Hero />
-        <About />
-        <Skills />
-        <Experience />
-        <FeaturedProjects />
-        <PracticeProjects />
-        <Contact />
+        <Suspense fallback={<div className="min-h-screen" />}>
+          <BelowFold onReady={() => setReady(true)} />
+        </Suspense>
       </main>
       <Footer />
-    </>
+    </div>
   )
 }

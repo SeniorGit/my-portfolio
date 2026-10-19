@@ -1,98 +1,221 @@
 @import "tailwindcss";
-@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
+/*
+  Design tokens — the single source of truth.
+  Monochrome: neutral grays only. Dark/light swap ONLY these colors;
+  type, spacing, radius, shadow and motion tokens below are theme-independent.
+*/
 :root {
-  --radius: 0.625rem;
-
-  --background: #FAFAF8;
-  --foreground: #16171A;
-  --card: #FFFFFF;
-  --card-foreground: #16171A;
-  --popover: #FFFFFF;
-  --popover-foreground: #16171A;
-  --primary: #16171A;
-  --primary-foreground: #FAFAF8;
-  --secondary: #F1F0EC;
-  --secondary-foreground: #16171A;
-  --muted: #F1F0EC;
-  --muted-foreground: #52555C;
-  --accent: #B45309;
-  --accent-foreground: #FFFFFF;
-  --destructive: #B91C1C;
-  --border: #E5E3DE;
-  --input: #E5E3DE;
-  --ring: #B45309;
+  --background: #fafafa;
+  --foreground: #0a0a0a;
+  --card: #ffffff;
+  --card-foreground: #0a0a0a;
+  --primary: #0a0a0a;
+  --primary-foreground: #fafafa;
+  --muted: #f0f0f0;
+  --muted-foreground: #595959;
+  --accent: #ebebeb;
+  --accent-foreground: #0a0a0a;
+  --border: #e2e2e2;
+  --input: #e2e2e2;
+  --ring: #0a0a0a;
+  --shadow-color: 0 0 0;
 }
 
 .dark {
-  --background: #14140F;
-  --foreground: #F5F4F0;
-  --card: #1C1C18;
-  --card-foreground: #F5F4F0;
-  --popover: #1C1C18;
-  --popover-foreground: #F5F4F0;
-  --primary: #F5F4F0;
-  --primary-foreground: #14140F;
-  --secondary: #232320;
-  --secondary-foreground: #F5F4F0;
-  --muted: #232320;
-  --muted-foreground: #A3A099;
-  --accent: #F59E0B;
-  --accent-foreground: #1C1206;
-  --destructive: #EF4444;
-  --border: #2E2D28;
-  --input: #2E2D28;
-  --ring: #F59E0B;
-}
-
-body {
-  margin: 0;
-  min-height: 100vh;
-  width: 100%;
-  font-family: var(--font-sans);
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-#root {
-  min-height: 100vh;
-  width: 100%;
+  --background: #0a0a0a;
+  --foreground: #fafafa;
+  --card: #111111;
+  --card-foreground: #fafafa;
+  --primary: #fafafa;
+  --primary-foreground: #0a0a0a;
+  --muted: #1a1a1a;
+  --muted-foreground: #a3a3a3;
+  --accent: #1f1f1f;
+  --accent-foreground: #fafafa;
+  --border: #262626;
+  --input: #262626;
+  --ring: #fafafa;
+  --shadow-color: 255 255 255;
 }
 
 @theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+@theme {
+  /* Typography: one display serif, one body sans, one mono for labels. */
+  --font-display: "Instrument Serif", ui-serif, Georgia, serif;
+  --font-sans: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono Variable", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --text-display: clamp(3.5rem, 13vw, 11rem);
+  --text-display--line-height: 0.92;
+  --text-display--letter-spacing: -0.03em;
+  --text-title: clamp(2.25rem, 5vw, 4rem);
+  --text-title--line-height: 1;
+  --text-title--letter-spacing: -0.02em;
+  --text-lead: clamp(1.25rem, 1.6vw + 0.6rem, 1.75rem);
+  --text-lead--line-height: 1.35;
+  --text-label: 0.75rem;
+  --text-label--line-height: 1rem;
+  --text-label--letter-spacing: 0.08em;
+
+  /* Radius: deliberately small and sharp. */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+
+  /* Section rhythm (spacing scale itself is Tailwind's --spacing). */
+  --spacing-section: clamp(5rem, 12vw, 10rem);
+
+  /* Shadow: one soft elevation, tinted by theme. */
+  --shadow-lift: 0 1px 2px rgb(var(--shadow-color) / 0.06), 0 12px 32px -12px rgb(var(--shadow-color) / 0.18);
+
+  /* Motion */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-soft: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast: 150ms;
+  --duration-base: 300ms;
+  --duration-slow: 700ms;
 }
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
+  }
+  html {
+    color-scheme: light;
+    -webkit-text-size-adjust: 100%;
+  }
+  html.dark {
+    color-scheme: dark;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background font-sans text-foreground antialiased;
+    margin: 0;
+    min-height: 100vh;
+    /* Theme switch changes color only; nothing about layout moves. */
+    transition:
+      background-color var(--duration-base) ease,
+      color var(--duration-base) ease;
+  }
+  #root {
+    min-height: 100vh;
+  }
+  ::selection {
+    background: var(--foreground);
+    color: var(--background);
+  }
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 3px;
+  }
+
+  /* Lenis recommended resets */
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-stopped {
+    overflow: hidden;
   }
 }
 
+@layer components {
+  /* Theme-aware transitions for surfaces so a toggle fades instead of snapping. */
+  .theme-surface {
+    transition:
+      background-color var(--duration-base) ease,
+      border-color var(--duration-base) ease,
+      color var(--duration-base) ease;
+  }
+  .label {
+    @apply font-mono text-label uppercase text-muted-foreground;
+  }
+  .link-underline {
+    background: linear-gradient(currentColor, currentColor) left bottom / 0 1px no-repeat;
+    transition: background-size var(--duration-base) var(--ease-out-expo);
+  }
+  .link-underline:hover,
+  .link-underline[aria-current="true"] {
+    background-size: 100% 1px;
+  }
+}
+
+/* Page fade-in on route change (opacity only). */
+@keyframes page-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.page-in {
+  animation: page-in var(--duration-slow) var(--ease-out-expo) both;
+}
+
+/* Skip link */
+.skip-link {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  z-index: 100;
+  transform: translateY(-200%);
+  background: var(--foreground);
+  color: var(--background);
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+.skip-link:focus {
+  transform: none;
+}
+
+/* Custom cursor: only on fine pointers with motion allowed. */
+.cursor-dot {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 90;
+  width: 12px;
+  height: 12px;
+  margin: -6px 0 0 -6px;
+  border-radius: 9999px;
+  background: #fff;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  opacity: 0;
+  will-change: transform;
+}
+@media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .cursor-dot {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
