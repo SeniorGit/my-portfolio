@@ -1,17 +1,30 @@
+import { SplitHeading } from "@/components/SplitHeading"
+import { RevealOnScroll } from "@/components/RevealOnScroll"
+
 interface SectionHeaderProps {
+  /** Section number, e.g. "01". */
+  index: string
   eyebrow: string
   title: string
   description?: string
 }
 
-export function SectionHeader({ eyebrow, title, description }: SectionHeaderProps) {
+export function SectionHeader({ index, eyebrow, title, description }: SectionHeaderProps) {
   return (
-    <div className="mb-10 max-w-2xl md:mb-14">
-      <p className="font-mono text-xs uppercase tracking-wide text-accent">{eyebrow}</p>
-      <h2 className="mt-2 text-[clamp(1.5rem,2.5vw+1rem,2.25rem)] font-semibold text-foreground">
-        {title}
-      </h2>
-      {description && <p className="mt-3 text-muted-foreground">{description}</p>}
-    </div>
+    <header className="mb-12 md:mb-20">
+      <RevealOnScroll>
+        <p className="label flex items-center gap-3">
+          <span className="text-foreground">{index}</span>
+          <span aria-hidden="true" className="h-px w-10 bg-border" />
+          <span>{eyebrow}</span>
+        </p>
+      </RevealOnScroll>
+      <SplitHeading text={title} className="mt-6 max-w-4xl font-display text-title text-foreground" />
+      {description && (
+        <RevealOnScroll delayMs={150}>
+          <p className="mt-6 max-w-xl text-lg text-muted-foreground">{description}</p>
+        </RevealOnScroll>
+      )}
+    </header>
   )
 }

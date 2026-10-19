@@ -1,37 +1,35 @@
 import { RevealOnScroll } from "@/components/RevealOnScroll"
+import { ScrubText } from "@/components/ScrubText"
 import { SectionHeader } from "@/components/ui/section-header"
 import { Container } from "@/components/ui/container"
 
 export function About() {
   return (
-    <section id="about" className="py-16 md:py-24">
+    <section id="about" className="border-t border-border py-section">
       <Container>
-        <RevealOnScroll>
-          <SectionHeader eyebrow="About" title="Background" />
-        </RevealOnScroll>
-        <RevealOnScroll delayMs={80}>
-          <div className="max-w-2xl space-y-4 text-foreground">
-            <p>
-              I am a fresh graduate from Informatics Engineering at Telkom
-              University, with a strong interest in fullstack web
-              development, particularly using{" "}
-              <span className="font-medium">Next.js</span> and{" "}
-              <span className="font-medium">Node.js</span>. I built the
-              Consulife website during the Work Ready Program and interned at
-              CoE Humic Telkom University.
-            </p>
+        <SectionHeader index="01" eyebrow="About" title="Background" />
+        <div className="grid gap-10 md:grid-cols-12">
+          <div className="md:col-span-7 md:col-start-6">
+            <ScrubText
+              className="text-lead text-foreground"
+              text="I am a fresh graduate from Computer Science at Telkom University, with a strong interest in fullstack web development, particularly using *Next.js* and *Node.js*. I built the Consulife website during the Work Ready Program and interned at CoE Humic Telkom University."
+            />
+          </div>
+          <RevealOnScroll delayMs={120} className="space-y-5 text-muted-foreground md:col-span-7 md:col-start-6">
             <p>
               In those projects, I turned UI designs into responsive,
-              production-ready websites. I also built this portfolio with
-              React and TypeScript.
+              production-ready websites. I now work as a fullstack developer
+              at MODA, building a logistics scheduling system with React,
+              Koa, and PostgreSQL.
             </p>
             <p>
-              I enjoy learning and improving, particularly in REST API
-              integration and database fundamentals, and work on personal
-              projects in my free time to sharpen those skills.
+              Outside of work I build personal projects, like a task manager
+              backed by a Node.js API and PostgreSQL, to go deeper on REST
+              API integration and database fundamentals. This portfolio is
+              built with React and TypeScript.
             </p>
-          </div>
-        </RevealOnScroll>
+          </RevealOnScroll>
+        </div>
       </Container>
     </section>
   )

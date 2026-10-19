@@ -10,15 +10,14 @@ const EMAIL = "alfitofadhil73@gmail.com"
 
 export function Contact() {
   return (
-    <section id="contact" className="border-t border-border py-16 md:py-24">
+    <section id="contact" className="border-t border-border py-section">
       <Container>
-        <RevealOnScroll>
-          <SectionHeader
-            eyebrow="Contact"
-            title="Get in Touch"
-            description="Open to frontend/fullstack opportunities — feel free to reach out."
-          />
-        </RevealOnScroll>
+        <SectionHeader
+          index="06"
+          eyebrow="Contact"
+          title="Get in Touch"
+          description="Open to frontend/fullstack opportunities — feel free to reach out."
+        />
         <RevealOnScroll delayMs={80}>
           <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center">
             <Button asChild size="lg">

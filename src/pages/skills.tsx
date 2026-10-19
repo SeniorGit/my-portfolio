@@ -10,6 +10,7 @@ import {
   SiGit,
 } from "react-icons/si"
 import { RevealOnScroll } from "@/components/RevealOnScroll"
+import { DrawLine } from "@/components/DrawLine"
 import { SectionHeader } from "@/components/ui/section-header"
 import { Container } from "@/components/ui/container"
 
@@ -27,21 +28,26 @@ const SKILLS = [
 
 export function Skills() {
   return (
-    <section id="skills" className="border-t border-border py-16 md:py-24">
+    <section id="skills" className="border-t border-border py-section">
       <Container>
-        <RevealOnScroll>
-          <SectionHeader eyebrow="Skills" title="Technical Skills" />
-        </RevealOnScroll>
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
+        <SectionHeader index="02" eyebrow="Skills" title="Technical Skills" />
+        <ul className="border-t border-border">
           {SKILLS.map(({ name, icon: Icon }, i) => (
-            <RevealOnScroll key={name} delayMs={i * 40}>
-              <div className="flex items-center gap-3 border border-border bg-card p-4">
-                <Icon className="size-5 text-accent" aria-hidden="true" />
-                <span className="text-sm text-foreground">{name}</span>
-              </div>
-            </RevealOnScroll>
+            <li key={name}>
+              <RevealOnScroll delayMs={i % 3 * 60}>
+                <div
+                  data-cursor
+                  className="theme-surface group flex items-center gap-6 py-5 transition-colors duration-300 hover:bg-accent"
+                >
+                  <span className="label w-8">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="font-display text-3xl text-foreground transition-transform duration-500 ease-out group-hover:translate-x-4 md:text-5xl">{name}</span>
+                  <Icon className="ml-auto size-6 text-muted-foreground transition-colors duration-300 group-hover:text-foreground" aria-hidden="true" />
+                </div>
+              </RevealOnScroll>
+              <DrawLine />
+            </li>
           ))}
-        </div>
+        </ul>
       </Container>
     </section>
   )

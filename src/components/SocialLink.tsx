@@ -13,7 +13,7 @@ export function SocialLink({ href, label, icon: Icon }: SocialLinkProps) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="inline-flex size-10 items-center justify-center border border-border text-foreground transition-colors duration-150 hover:border-accent hover:text-accent"
+      className="theme-surface inline-flex size-11 items-center justify-center rounded-md border border-border text-foreground transition-[background-color,color,border-color] duration-300 hover:border-foreground hover:bg-foreground hover:text-background"
     >
       <Icon className="size-4" />
     </a>

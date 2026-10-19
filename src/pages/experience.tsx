@@ -1,4 +1,5 @@
 import { RevealOnScroll } from "@/components/RevealOnScroll"
+import { Parallax } from "@/components/Parallax"
 import { SectionHeader } from "@/components/ui/section-header"
 import { Container } from "@/components/ui/container"
 import { Tag } from "@/components/ui/tag"
@@ -31,52 +32,59 @@ const EXPERIENCES = [
 
 export function Experience() {
   return (
-    <section id="experience" className="border-t border-border py-16 md:py-24">
+    <section id="experience" className="border-t border-border py-section">
       <Container>
-        <RevealOnScroll>
-          <SectionHeader eyebrow="Experience" title="Work Experience" />
-        </RevealOnScroll>
+        <SectionHeader index="03" eyebrow="Experience" title="Work Experience" />
 
-        <div className="grid gap-10 md:grid-cols-2 md:gap-16">
-          <div className="space-y-8 border-l border-border pl-6">
+        <div className="grid gap-16 lg:grid-cols-12">
+          <div className="lg:col-span-7">
             {EXPERIENCES.map((exp) => (
               <RevealOnScroll key={exp.id}>
-                <div className="relative">
-                  <span className="absolute -left-[1.85rem] top-1.5 size-2.5 rounded-full bg-accent" />
-                  <h3 className="text-base font-semibold text-foreground">{exp.company}</h3>
-                  <p className="font-mono text-xs text-muted-foreground">
-                    {exp.role} · {exp.period}
-                  </p>
-                  <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-muted-foreground">
-                    {exp.achievements.map((a) => (
-                      <li key={a}>{a}</li>
-                    ))}
-                  </ul>
-                  <div className="mt-4 flex flex-wrap gap-1.5">
-                    {exp.tech.map((t) => (
-                      <Tag key={t}>{t}</Tag>
-                    ))}
+                <article className="grid gap-4 border-t border-border py-10 first:border-t-0 first:pt-0 md:grid-cols-[10rem_1fr] md:gap-8">
+                  <p className="label pt-1.5">{exp.period}</p>
+                  <div>
+                    <h3 className="font-display text-3xl text-foreground">{exp.company}</h3>
+                    <p className="mt-1 text-sm text-muted-foreground">{exp.role}</p>
+                    <ul className="mt-5 space-y-3 text-muted-foreground">
+                      {exp.achievements.map((a) => (
+                        <li key={a} className="flex gap-3">
+                          <span aria-hidden="true" className="mt-3 h-px w-4 shrink-0 bg-foreground" />
+                          {a}
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="mt-6 flex flex-wrap gap-1.5">
+                      {exp.tech.map((t) => (
+                        <Tag key={t}>{t}</Tag>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                </article>
               </RevealOnScroll>
             ))}
           </div>
 
-          <RevealOnScroll delayMs={100} strong>
-            <figure className="border border-border bg-card p-3">
-              <img
-                src={Mockup}
-                alt="Consulife platform interface preview"
-                width={960}
-                height={600}
-                loading="lazy"
-                className="w-full"
-              />
-              <figcaption className="mt-3 text-sm text-muted-foreground">
-                Consulife — a consultation platform built with React and TypeScript.
-              </figcaption>
-            </figure>
-          </RevealOnScroll>
+          <div className="lg:col-span-5">
+            <RevealOnScroll strong>
+              <figure>
+                <Parallax distance={16}>
+                  <div className="theme-surface rounded-sm border border-border bg-card p-3">
+                    <img
+                      src={Mockup}
+                      alt="Consulife platform interface preview"
+                      width={960}
+                      height={600}
+                      loading="lazy"
+                      className="w-full"
+                    />
+                  </div>
+                </Parallax>
+                <figcaption className="mt-4 text-sm text-muted-foreground">
+                  Consulife — a consultation platform built with React and TypeScript.
+                </figcaption>
+              </figure>
+            </RevealOnScroll>
+          </div>
         </div>
       </Container>
     </section>

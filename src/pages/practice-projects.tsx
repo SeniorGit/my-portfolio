@@ -8,27 +8,26 @@ import { practiceProjects } from "@/lib/projects"
 
 export function PracticeProjects() {
   return (
-    <section className="border-t border-border py-16 md:py-24">
+    <section className="border-t border-border py-section">
       <Container>
-        <RevealOnScroll>
-          <SectionHeader
-            eyebrow="Practice"
-            title="Practice & Fundamentals"
-            description="Smaller exercises used to learn core web fundamentals."
-          />
-        </RevealOnScroll>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <SectionHeader
+          index="05"
+          eyebrow="Practice"
+          title="Practice & Fundamentals"
+          description="Smaller exercises used to learn core web fundamentals."
+        />
+        <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
           {practiceProjects.map((project, i) => (
-            <RevealOnScroll key={project.id} delayMs={i * 60}>
+            <RevealOnScroll key={project.id} delayMs={(i % 3) * 80}>
               <ProjectCard project={project} variant="practice" />
             </RevealOnScroll>
           ))}
         </div>
-        <div className="mt-10 flex justify-center">
-          <Button variant="outline" asChild>
+        <RevealOnScroll className="mt-16 flex justify-center">
+          <Button variant="outline" size="lg" asChild>
             <Link to="/project">Explore all projects →</Link>
           </Button>
-        </div>
+        </RevealOnScroll>
       </Container>
     </section>
   )
